@@ -4,4 +4,39 @@ format: html
 editor: visual
 ---
 
-## 
+## Data Exploration and Summarizing in R
+
+```{r}
+library(tidyverse)
+library(skimr)
+library(GGally)
+```
+
+```{r}
+names(diamonds)
+
+dim(diamonds)
+
+summary(diamonds)
+
+head(diamonds)
+
+tail(diamonds)
+
+skimr::skim(diamonds)
+```
+
+```{r}
+ggpairs(diamonds)
+```
+
+```{r}
+ggplot(data = diamonds, aes(x = carat, 
+                            y = price)) + 
+  geom_point() + 
+  theme_minimal()
+```
+
+```{r}
+ggplot(data = diamonds, aes(x = carat)) + geom_histogram() + theme_minimal()
+```
